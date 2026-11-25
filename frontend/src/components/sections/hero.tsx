@@ -46,6 +46,24 @@ export function Hero({ data: _data }: HeroProps) {
           transition={{ duration: 0.5 }}
           className="flex flex-col gap-6"
         >
+          {/* Profile photo */}
+          <div className="flex items-center gap-4">
+            <div className="relative flex-shrink-0">
+              <div className="h-16 w-16 rounded-full overflow-hidden border-2 border-primary/40 shadow-[0_0_20px_hsl(142_72%_50%/0.2)]">
+                <img
+                  src="/profile.jpeg"
+                  alt="Mohamed Amine Aabid"
+                  className="h-full w-full object-cover"
+                />
+              </div>
+              <span className="absolute bottom-0.5 right-0.5 h-3 w-3 rounded-full bg-primary border-2 border-background shadow-[0_0_6px_hsl(142_72%_50%/0.8)]" />
+            </div>
+            <div>
+              <p className="font-sans text-sm font-semibold text-foreground">Mohamed Amine Aabid</p>
+              <p className="font-mono text-xs text-muted">AI & Data Engineer</p>
+            </div>
+          </div>
+
           {/* Availability badge */}
           <div className="flex items-center gap-2">
             <span className="inline-block h-2 w-2 rounded-full bg-primary animate-blink" />
