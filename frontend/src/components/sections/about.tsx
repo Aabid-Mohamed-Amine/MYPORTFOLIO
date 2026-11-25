@@ -35,7 +35,7 @@ export function About({ data }: AboutProps) {
           >
             {/* Profile photo */}
             <div className="relative w-fit">
-              <div className="h-56 w-56 rounded-2xl overflow-hidden border border-primary/30 shadow-[0_0_40px_hsl(142_72%_50%/0.1)]">
+              <div className="h-80 w-80 rounded-2xl overflow-hidden border border-primary/30 shadow-[0_0_40px_hsl(142_72%_50%/0.1)]">
                 <img
                   src="/profile.jpeg"
                   alt="Mohamed Amine Aabid"

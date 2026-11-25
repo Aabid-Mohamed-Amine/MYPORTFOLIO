@@ -3,7 +3,7 @@ import { motion } from 'motion/react'
 import { Copy, Check, Mail, MessageSquare, Send } from 'lucide-react'
 import { Button } from '../ui/button'
 
-const EMAIL = 'mohamedamine.aabid@gmail.com'
+const EMAIL = 'amine.aabid00@gmail.com'
 
 interface ChatMessage {
   role: 'user' | 'assistant'
