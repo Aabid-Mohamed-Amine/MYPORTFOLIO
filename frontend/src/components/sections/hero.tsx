@@ -2,6 +2,7 @@ import { motion } from 'motion/react'
 import { Download, ArrowRight } from 'lucide-react'
 import { Button } from '../ui/button'
 import { Badge } from '../ui/badge'
+import { useLang } from '../../i18n/language-context'
 import type { Portfolio } from '../../lib/schemas'
 
 const TECH_PILLS = ['Python', 'PyTorch', 'LangChain/RAG', 'SQL/Spark', 'Docker', 'Azure/AWS']
@@ -24,6 +25,7 @@ interface HeroProps {
 }
 
 export function Hero({ data: _data }: HeroProps) {
+  const { t } = useLang()
   return (
     <section
       id="hero"
@@ -68,25 +70,21 @@ export function Hero({ data: _data }: HeroProps) {
           <div className="flex items-center gap-2">
             <span className="inline-block h-2 w-2 rounded-full bg-primary animate-blink" />
             <span className="font-mono text-xs text-primary tracking-widest uppercase">
-              Open to Opportunities · CDI / Alternance
+              {t.hero.availability}
             </span>
           </div>
 
           {/* H1 */}
           <h1 className="font-sans text-5xl font-extrabold leading-[1.08] tracking-tight text-foreground md:text-6xl xl:text-7xl">
-            Turning raw data into{' '}
-            <span className="text-primary">
-              intelligent
-            </span>{' '}
-            systems.
+            {t.hero.h1a}{' '}
+            <span className="text-primary">{t.hero.h1b}</span>{' '}
+            {t.hero.h1c}
             <span className="cursor-blink text-primary ml-1">|</span>
           </h1>
 
           {/* Subtitle */}
           <p className="font-sans text-base text-muted leading-relaxed max-w-lg">
-            AI Engineer, Data Engineer &amp; Data Scientist — conception de pipelines de données
-            scalables, fine-tuning NLP/LLM &amp; Computer Vision, et déploiements MLOps
-            production.
+            {t.hero.subtitle}
           </p>
 
           {/* CTAs */}
@@ -98,12 +96,12 @@ export function Hero({ data: _data }: HeroProps) {
                 document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })
               }
             >
-              Voir les projets <ArrowRight size={16} className="ml-2" />
+              {t.hero.ctaProjects} <ArrowRight size={16} className="ml-2" />
             </Button>
             <a href="/cv-mohamed-amine-aabid.pdf" download>
               <Button variant="ghost" size="lg">
                 <Download size={16} className="mr-2" />
-                Télécharger CV
+                {t.hero.ctaCv}
               </Button>
             </a>
           </div>

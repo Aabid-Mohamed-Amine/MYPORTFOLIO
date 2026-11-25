@@ -1,5 +1,6 @@
 import { type ReactNode } from 'react'
 import { motion } from 'motion/react'
+import { useLang } from '../../i18n/language-context'
 import {
   Brain,
   Database,
@@ -45,6 +46,7 @@ interface StackProps {
 }
 
 export function Stack({ data }: StackProps) {
+  const { t } = useLang()
   return (
     <section id="stack" className="section-padding bg-surface">
       <div className="mx-auto max-w-6xl">
@@ -57,9 +59,9 @@ export function Stack({ data }: StackProps) {
           className="mb-16"
         >
           <span className="font-mono text-xs text-primary uppercase tracking-widest">
-            Outils & technologies
+            {t.stack.eyebrow}
           </span>
-          <h2 className="section-title mt-2 text-foreground">Tech Stack</h2>
+          <h2 className="section-title mt-2 text-foreground">{t.stack.title}</h2>
         </motion.div>
 
         {/* 3-column grid */}

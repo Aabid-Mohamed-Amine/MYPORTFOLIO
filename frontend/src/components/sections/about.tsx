@@ -1,4 +1,5 @@
 import { motion } from 'motion/react'
+import { useLang } from '../../i18n/language-context'
 import type { Portfolio } from '../../lib/schemas'
 
 interface AboutProps {
@@ -6,6 +7,7 @@ interface AboutProps {
 }
 
 export function About({ data }: AboutProps) {
+  const { t } = useLang()
   return (
     <section id="about" className="section-padding">
       <div className="mx-auto max-w-6xl">
@@ -18,9 +20,9 @@ export function About({ data }: AboutProps) {
           className="mb-16"
         >
           <span className="font-mono text-xs text-primary uppercase tracking-widest">
-            Profil & chiffres
+            {t.about.eyebrow}
           </span>
-          <h2 className="section-title mt-2 text-foreground">À Propos</h2>
+          <h2 className="section-title mt-2 text-foreground">{t.about.title}</h2>
         </motion.div>
 
         {/* Two-column layout */}
@@ -76,22 +78,12 @@ export function About({ data }: AboutProps) {
             viewport={{ once: true }}
             className="flex flex-col gap-5"
           >
+            <p className="font-sans text-base text-muted leading-relaxed">{t.about.p1}</p>
+            <p className="font-sans text-base text-muted leading-relaxed">{t.about.p2}</p>
             <p className="font-sans text-base text-muted leading-relaxed">
-              Passionné par l&apos;intersection entre l&apos;IA, la data et le déploiement
-              production, je construis des systèmes intelligents capables de passer du prototype
-              à l&apos;échelle industrielle.
-            </p>
-            <p className="font-sans text-base text-muted leading-relaxed">
-              Mon profil combine data engineering (pipelines ETL/ELT, Spark, bases vectorielles),
-              machine learning appliqué (NLP, LLM fine-tuning, Computer Vision) et MLOps
-              (conteneurisation, CI/CD, monitoring). Je conçois des architectures bout-en-bout :
-              de l&apos;ingestion des données brutes jusqu&apos;à l&apos;API de serving en production.
-            </p>
-            <p className="font-sans text-base text-muted leading-relaxed">
-              Je cherche un poste{' '}
-              <span className="text-primary font-semibold">CDI ou Alternance</span> pour
-              concevoir et opérer des systèmes d&apos;IA à fort impact, au sein d&apos;une équipe
-              tech exigeante.
+              {t.about.p3a}{' '}
+              <span className="text-primary font-semibold">{t.about.p3b}</span>{' '}
+              {t.about.p3c}
             </p>
           </motion.div>
 

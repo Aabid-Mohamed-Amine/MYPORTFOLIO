@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { render, screen } from '@testing-library/react'
+import { render, screen } from './test-utils'
 import { Contact } from '../components/sections/contact'
 import { About } from '../components/sections/about'
 import { FALLBACK_PORTFOLIO } from '../data/portfolio-fallback'

@@ -1,6 +1,7 @@
 import { motion } from 'motion/react'
 import { MapPin, Calendar } from 'lucide-react'
 import { Badge } from '../ui/badge'
+import { useLang } from '../../i18n/language-context'
 import type { Portfolio } from '../../lib/schemas'
 
 interface ExperienceProps {
@@ -8,6 +9,7 @@ interface ExperienceProps {
 }
 
 export function Experience({ data }: ExperienceProps) {
+  const { t } = useLang()
   return (
     <section id="experiences" className="section-padding">
       <div className="mx-auto max-w-4xl">
@@ -20,9 +22,9 @@ export function Experience({ data }: ExperienceProps) {
           className="mb-16"
         >
           <span className="font-mono text-xs text-primary uppercase tracking-widest">
-            Parcours professionnel
+            {t.experience.eyebrow}
           </span>
-          <h2 className="section-title mt-2 text-foreground">Expériences</h2>
+          <h2 className="section-title mt-2 text-foreground">{t.experience.title}</h2>
         </motion.div>
 
         {/* Timeline */}

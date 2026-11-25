@@ -1,5 +1,6 @@
 import { motion } from 'motion/react'
 import { GraduationCap, Award } from 'lucide-react'
+import { useLang } from '../../i18n/language-context'
 import type { Portfolio } from '../../lib/schemas'
 
 interface EducationProps {
@@ -7,6 +8,7 @@ interface EducationProps {
 }
 
 export function Education({ data }: EducationProps) {
+  const { t } = useLang()
   return (
     <section id="formation" className="section-padding">
       <div className="mx-auto max-w-6xl">
@@ -19,9 +21,9 @@ export function Education({ data }: EducationProps) {
           className="mb-16"
         >
           <span className="font-mono text-xs text-primary uppercase tracking-widest">
-            Parcours académique
+            {t.education.eyebrow}
           </span>
-          <h2 className="section-title mt-2 text-foreground">Formation</h2>
+          <h2 className="section-title mt-2 text-foreground">{t.education.title}</h2>
         </motion.div>
 
         {/* Degrees grid */}
@@ -59,7 +61,7 @@ export function Education({ data }: EducationProps) {
         >
           <div className="flex items-center gap-3 mb-6">
             <Award size={18} className="text-primary" />
-            <h3 className="font-sans text-lg font-semibold text-foreground">Certifications</h3>
+            <h3 className="font-sans text-lg font-semibold text-foreground">{t.education.certifications}</h3>
           </div>
           <div className="flex flex-wrap gap-3">
             {data.certifications.map((cert) => (

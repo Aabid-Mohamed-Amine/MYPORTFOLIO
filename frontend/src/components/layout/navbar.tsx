@@ -3,17 +3,19 @@ import { Menu, X } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
 import { Button } from '../ui/button'
 import { Badge } from '../ui/badge'
-
-const NAV_LINKS = [
-  { label: 'Expériences', href: '#experiences' },
-  { label: 'Projets', href: '#projects' },
-  { label: 'Formation', href: '#formation' },
-  { label: 'Stack', href: '#stack' },
-  { label: 'Contact', href: '#contact' },
-]
+import { useLang } from '../../i18n/language-context'
 
 export function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
+  const { t, lang, toggle } = useLang()
+
+  const NAV_LINKS = [
+    { label: t.nav.experiences, href: '#experiences' },
+    { label: t.nav.projects, href: '#projects' },
+    { label: t.nav.formation, href: '#formation' },
+    { label: t.nav.stack, href: '#stack' },
+    { label: t.nav.contact, href: '#contact' },
+  ]
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 border-b border-custom backdrop-blur-md bg-background/80">
@@ -42,8 +44,16 @@ export function Navbar() {
             ))}
           </div>
 
-          {/* CTA */}
-          <div className="hidden md:block">
+          {/* Right controls */}
+          <div className="hidden md:flex items-center gap-3">
+            {/* Language toggle */}
+            <button
+              onClick={toggle}
+              className="font-mono text-xs font-medium border border-custom rounded-md px-2.5 py-1.5 text-muted hover:border-primary hover:text-primary transition-colors"
+              aria-label="Switch language"
+            >
+              {lang === 'fr' ? 'EN' : 'FR'}
+            </button>
             <Button
               variant="primary"
               size="sm"
@@ -51,18 +61,27 @@ export function Navbar() {
                 document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
               }}
             >
-              Me contacter →
+              {t.nav.cta}
             </Button>
           </div>
 
-          {/* Mobile hamburger */}
-          <button
-            className="md:hidden text-foreground p-2"
-            onClick={() => setMenuOpen((v) => !v)}
-            aria-label="Toggle menu"
-          >
-            {menuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
+          {/* Mobile controls */}
+          <div className="md:hidden flex items-center gap-2">
+            <button
+              onClick={toggle}
+              className="font-mono text-xs font-medium border border-custom rounded-md px-2 py-1 text-muted hover:border-primary hover:text-primary transition-colors"
+              aria-label="Switch language"
+            >
+              {lang === 'fr' ? 'EN' : 'FR'}
+            </button>
+            <button
+              className="text-foreground p-2"
+              onClick={() => setMenuOpen((v) => !v)}
+              aria-label="Toggle menu"
+            >
+              {menuOpen ? <X size={20} /> : <Menu size={20} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -96,7 +115,7 @@ export function Navbar() {
                 }}
                 className="self-start"
               >
-                Me contacter →
+                {t.nav.cta}
               </Button>
             </div>
           </motion.div>

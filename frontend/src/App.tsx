@@ -8,18 +8,16 @@ import { Stack } from './components/sections/stack'
 import { About } from './components/sections/about'
 import { Contact } from './components/sections/contact'
 import { usePortfolioData } from './hooks/use-portfolio-data'
+import { LanguageProvider, useLang } from './i18n/language-context'
 
-export default function App() {
+function PortfolioApp() {
   const { data, loading, error } = usePortfolioData()
+  const { t } = useLang()
 
   if (loading) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="text-center">
-          <div className="font-mono text-xs text-primary animate-pulse">
-            Chargement du portfolio…
-          </div>
-        </div>
+        <div className="font-mono text-xs text-primary animate-pulse">{t.app.loading}</div>
       </div>
     )
   }
@@ -31,7 +29,7 @@ export default function App() {
       {error && (
         <div className="fixed top-16 inset-x-0 z-40 flex justify-center px-4 pt-2">
           <div className="font-mono text-xs text-muted border border-muted/30 bg-surface rounded-md px-3 py-1.5">
-            ⚡ Mode offline — données statiques
+            {t.app.offline}
           </div>
         </div>
       )}
@@ -48,5 +46,13 @@ export default function App() {
 
       <Footer />
     </div>
+  )
+}
+
+export default function App() {
+  return (
+    <LanguageProvider>
+      <PortfolioApp />
+    </LanguageProvider>
   )
 }

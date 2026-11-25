@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion } from 'motion/react'
 import { Copy, Check, Mail, MessageSquare, Send } from 'lucide-react'
 import { Button } from '../ui/button'
+import { useLang } from '../../i18n/language-context'
 
 const EMAIL = 'amine.aabid00@gmail.com'
 
@@ -11,6 +12,7 @@ interface ChatMessage {
 }
 
 export function Contact() {
+  const { t } = useLang()
   const [copied, setCopied] = useState(false)
   const [chatOpen, setChatOpen] = useState(false)
   const [messages, setMessages] = useState<ChatMessage[]>([])
@@ -65,7 +67,7 @@ export function Contact() {
     } catch {
       setMessages([
         ...newMessages,
-        { role: 'assistant', content: 'Désolé, une erreur est survenue. Réessayez plus tard.' },
+        { role: 'assistant', content: t.contact.chatError },
       ])
     } finally {
       setStreaming(false)
@@ -92,14 +94,13 @@ export function Contact() {
           className="flex flex-col items-center gap-6"
         >
           <span className="font-mono text-xs text-primary uppercase tracking-widest">
-            Travaillons ensemble
+            {t.contact.eyebrow}
           </span>
           <h2 className="section-title text-foreground max-w-2xl">
-            Prêt à construire le prochain système intelligent ?
+            {t.contact.title}
           </h2>
           <p className="font-sans text-base text-muted max-w-lg">
-            CDI ou Alternance — disponible pour des projets ambitieux en IA, Data Engineering et
-            MLOps.
+            {t.contact.subtitle}
           </p>
 
           {/* Email copy */}
@@ -124,7 +125,7 @@ export function Contact() {
               className="flex items-center gap-2"
             >
               <MessageSquare size={15} />
-              {chatOpen ? 'Fermer le chat' : 'Poser une question'}
+              {chatOpen ? t.contact.chatClose : t.contact.chatOpen}
             </Button>
           </div>
 
@@ -141,7 +142,7 @@ export function Contact() {
               <div className="border-b border-custom px-5 py-3 flex items-center gap-2">
                 <span className="h-2 w-2 rounded-full bg-primary animate-blink" />
                 <span className="font-mono text-xs text-muted">
-                  AI Assistant — Mohamed Amine Aabid
+                  {t.contact.chatLabel}
                 </span>
               </div>
 
@@ -149,7 +150,7 @@ export function Contact() {
               <div className="flex flex-col gap-3 p-5 min-h-[160px] max-h-80 overflow-y-auto">
                 {messages.length === 0 && (
                   <p className="font-mono text-xs text-muted">
-                    Posez une question sur mon parcours, mes projets ou mon stack technique…
+                    {t.contact.chatEmpty}
                   </p>
                 )}
                 {messages.map((msg, i) => (
@@ -185,7 +186,7 @@ export function Contact() {
                       void sendMessage()
                     }
                   }}
-                  placeholder="Votre question…"
+                  placeholder={t.contact.chatPlaceholder}
                   className="flex-1 bg-transparent font-sans text-sm text-foreground placeholder:text-muted outline-none"
                   disabled={streaming}
                 />

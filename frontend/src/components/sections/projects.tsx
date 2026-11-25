@@ -1,6 +1,7 @@
 import { motion } from 'motion/react'
 import { ExternalLink, Github, Terminal } from 'lucide-react'
 import { Badge } from '../ui/badge'
+import { useLang } from '../../i18n/language-context'
 import type { Portfolio } from '../../lib/schemas'
 
 interface ProjectsProps {
@@ -8,6 +9,7 @@ interface ProjectsProps {
 }
 
 export function Projects({ data }: ProjectsProps) {
+  const { t } = useLang()
   return (
     <section id="projects" className="section-padding bg-surface">
       <div className="mx-auto max-w-6xl">
@@ -20,9 +22,9 @@ export function Projects({ data }: ProjectsProps) {
           className="mb-16"
         >
           <span className="font-mono text-xs text-primary uppercase tracking-widest">
-            Réalisations techniques
+            {t.projects.eyebrow}
           </span>
-          <h2 className="section-title mt-2 text-foreground">Projets</h2>
+          <h2 className="section-title mt-2 text-foreground">{t.projects.title}</h2>
         </motion.div>
 
         {/* Project cards */}
@@ -91,7 +93,7 @@ export function Projects({ data }: ProjectsProps) {
                         rel="noopener noreferrer"
                         className="flex items-center gap-1.5 font-mono text-xs text-muted hover:text-primary transition-colors"
                       >
-                        <Github size={14} /> Code
+                        <Github size={14} /> {t.projects.code}
                       </a>
                     )}
                     {project.demoUrl && (
@@ -101,7 +103,7 @@ export function Projects({ data }: ProjectsProps) {
                         rel="noopener noreferrer"
                         className="flex items-center gap-1.5 font-mono text-xs text-muted hover:text-primary transition-colors"
                       >
-                        <ExternalLink size={14} /> Demo
+                        <ExternalLink size={14} /> {t.projects.demo}
                       </a>
                     )}
                   </div>
@@ -112,7 +114,7 @@ export function Projects({ data }: ProjectsProps) {
                   <div className="flex items-center gap-2 mb-4">
                     <Terminal size={14} className="text-primary" />
                     <span className="font-mono text-xs text-muted uppercase tracking-wider">
-                      Architecture
+                      {t.projects.architecture}
                     </span>
                   </div>
                   <pre className="font-mono text-xs text-muted leading-relaxed whitespace-pre-wrap break-words">

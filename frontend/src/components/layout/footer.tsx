@@ -1,4 +1,5 @@
 import { Github, Linkedin, ExternalLink } from 'lucide-react'
+import { useLang } from '../../i18n/language-context'
 
 const SOCIAL_LINKS = [
   {
@@ -19,12 +20,13 @@ const SOCIAL_LINKS = [
 ]
 
 export function Footer() {
+  const { t } = useLang()
   return (
     <footer className="border-t border-custom bg-surface">
       <div className="mx-auto max-w-7xl px-6 py-8 md:px-12">
         <div className="flex flex-col items-center gap-4 sm:flex-row sm:justify-between">
           <p className="font-mono text-xs text-muted">
-            © {new Date().getFullYear()} Mohamed Amine Aabid — AI & Data Engineer
+            © {new Date().getFullYear()} {t.footer.copyright}
           </p>
 
           <div className="flex items-center gap-4">
