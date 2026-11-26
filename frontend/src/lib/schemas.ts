@@ -11,8 +11,10 @@ export const experienceSchema = z
     description: z.string(),
     metrics: z.array(z.string()),
     tags: z.array(z.string()),
+    repo_url: z.string().nullable().optional().default(null),
   })
   .passthrough()
+  .transform((e) => ({ ...e, repoUrl: e.repo_url ?? null }))
 
 export const projectSchema = z
   .object({

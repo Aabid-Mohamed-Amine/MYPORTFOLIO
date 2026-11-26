@@ -11,6 +11,7 @@ class Experience(BaseModel):
     description: str
     metrics: list[str]
     tags: list[str]
+    repo_url: str | None = None
 
 
 class Project(BaseModel):

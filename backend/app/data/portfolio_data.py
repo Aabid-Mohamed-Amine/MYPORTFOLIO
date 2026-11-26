@@ -41,6 +41,7 @@ PORTFOLIO_DATA = PortfolioResponse(
             ),
             metrics=["2 500+ segments indexés", "Whisper Medium LoRA fine-tuned", "WER réduit de 32%"],
             tags=["Whisper", "LoRA", "FAISS", "MiniLM", "Python", "NLP", "Transformers"],
+            repo_url="https://github.com/Aabid-Mohamed-Amine/systeme-indexation-et-recherche-semantique",
         ),
         Experience(
             id="3dsf",
@@ -56,6 +57,7 @@ PORTFOLIO_DATA = PortfolioResponse(
             ),
             metrics=["Pipeline CV matching déployé", "Chatbot RAG RH opérationnel"],
             tags=["RAG", "LangChain", "FastAPI", "PostgreSQL", "NLP", "Python"],
+            repo_url="https://github.com/Aabid-Mohamed-Amine/nlp-recruitment-system",
         ),
         Experience(
             id="wehelp",
@@ -142,7 +144,7 @@ PORTFOLIO_DATA = PortfolioResponse(
             ),
             benchmarks=["F1-Score: 0.82", "Accuracy: 97%", "AraBERT fine-tuned"],
             tech_stack=["AraBERT", "PyTorch", "FastAPI", "React", "Docker", "Hugging Face"],
-            repo_url=None,
+            repo_url="https://github.com/Aabid-Mohamed-Amine/NER--PROJECT",
         ),
         Project(
             id="medical-rag",
@@ -160,7 +162,7 @@ PORTFOLIO_DATA = PortfolioResponse(
             ),
             benchmarks=["GPT-4 grounded responses", "Azure deployed", "CI/CD pipeline"],
             tech_stack=["LangChain", "Azure OpenAI", "Chroma", "FastAPI", "Azure", "GitHub Actions"],
-            repo_url=None,
+            repo_url="https://github.com/Aabid-Mohamed-Amine/Health-RAG",
         ),
         Project(
             id="cv-mlops",
@@ -229,6 +231,12 @@ PORTFOLIO_DATA = PortfolioResponse(
             title="SQL",
             issuer="365 Data Science",
             year="2023",
+        ),
+        Certification(
+            id="cert-oracle",
+            title="Oracle Cloud Infrastructure 2025 Certified Data Science Professional",
+            issuer="Oracle",
+            year="2025",
         ),
     ],
     skill_categories=[

@@ -1,5 +1,5 @@
 import { motion } from 'motion/react'
-import { MapPin, Calendar } from 'lucide-react'
+import { MapPin, Calendar, Github } from 'lucide-react'
 import { Badge } from '../ui/badge'
 import { useLang } from '../../i18n/language-context'
 import type { Portfolio } from '../../lib/schemas'
@@ -91,13 +91,24 @@ export function Experience({ data }: ExperienceProps) {
                     </div>
                   )}
 
-                  {/* Tags */}
-                  <div className="flex flex-wrap gap-1.5">
+                  {/* Tags + repo link */}
+                  <div className="flex flex-wrap items-center gap-1.5">
                     {exp.tags.map((tag) => (
                       <Badge key={tag} variant="gray">
                         {tag}
                       </Badge>
                     ))}
+                    {exp.repoUrl && (
+                      <a
+                        href={exp.repoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="ml-auto flex items-center gap-1.5 font-mono text-xs text-muted hover:text-primary transition-colors"
+                      >
+                        <Github size={13} />
+                        Code
+                      </a>
+                    )}
                   </div>
                 </div>
               </motion.div>

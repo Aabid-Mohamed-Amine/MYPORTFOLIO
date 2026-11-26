@@ -8,6 +8,7 @@ export interface Experience {
   description: string
   metrics: string[]
   tags: string[]
+  repoUrl: string | null
 }
 
 export interface Project {

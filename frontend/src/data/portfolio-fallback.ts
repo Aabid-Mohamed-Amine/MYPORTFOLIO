@@ -13,6 +13,7 @@ export const FALLBACK_PORTFOLIO: Portfolio = {
         "Conception et déploiement d'AuditScanIA, un système multi-agent IA pour l'automatisation de l'audit cybersécurité. Architecture microservices Docker, orchestration d'agents LLM avec LangChain et Gemini 2.5 Flash.",
       metrics: ['-46% temps d\'audit', '14 microservices Docker', 'Risk Score 90/100'],
       tags: ['Gemini 2.5 Flash', 'LangChain', 'Docker', 'FastAPI', 'RAG'],
+      repoUrl: null,
     },
     {
       id: 'snrt',
@@ -25,6 +26,7 @@ export const FALLBACK_PORTFOLIO: Portfolio = {
         'Fine-tuning de Whisper Medium avec LoRA pour la transcription automatique. Indexation sémantique avec FAISS et MiniLM sur 2 500+ segments.',
       metrics: ['2 500+ segments indexés', 'Whisper Medium LoRA fine-tuned'],
       tags: ['Whisper', 'LoRA', 'FAISS', 'MiniLM', 'Python'],
+      repoUrl: 'https://github.com/Aabid-Mohamed-Amine/systeme-indexation-et-recherche-semantique',
     },
     {
       id: '3dsf',
@@ -37,6 +39,7 @@ export const FALLBACK_PORTFOLIO: Portfolio = {
         "Développement d'un pipeline de matching CV/offres d'emploi par similarité sémantique et d'un chatbot RAG de support RH.",
       metrics: ['Pipeline CV matching déployé', 'Chatbot RAG RH opérationnel'],
       tags: ['RAG', 'LangChain', 'FastAPI', 'PostgreSQL'],
+      repoUrl: 'https://github.com/Aabid-Mohamed-Amine/nlp-recruitment-system',
     },
     {
       id: 'wehelp',
@@ -49,6 +52,7 @@ export const FALLBACK_PORTFOLIO: Portfolio = {
         'Analyse de données clients et construction de tableaux de bord décisionnels sous Power BI.',
       metrics: ['Dashboards Power BI déployés'],
       tags: ['Power BI', 'SQL', 'Python'],
+      repoUrl: null,
     },
     {
       id: 'onee',
@@ -61,6 +65,7 @@ export const FALLBACK_PORTFOLIO: Portfolio = {
         'Conception et implémentation de pipelines ETL pour la collecte, transformation et chargement de données opérationnelles.',
       metrics: ['Pipelines ETL opérationnels'],
       tags: ['Python', 'SQL', 'ETL'],
+      repoUrl: null,
     },
   ],
   projects: [
@@ -100,7 +105,7 @@ export const FALLBACK_PORTFOLIO: Portfolio = {
       architecture: 'AraBERT (fine-tuned) · FastAPI · React · Docker',
       benchmarks: ['F1-Score: 0.82', 'Accuracy: 97%'],
       techStack: ['AraBERT', 'PyTorch', 'FastAPI', 'React', 'Docker'],
-      repoUrl: null,
+      repoUrl: 'https://github.com/Aabid-Mohamed-Amine/NER--PROJECT',
       demoUrl: null,
     },
     {
@@ -113,7 +118,7 @@ export const FALLBACK_PORTFOLIO: Portfolio = {
       architecture: 'Azure OpenAI GPT-4 · LangChain · Chroma DB · Azure Container Instances',
       benchmarks: ['GPT-4 grounded responses', 'Azure deployed'],
       techStack: ['LangChain', 'Azure OpenAI', 'Chroma', 'FastAPI', 'Azure'],
-      repoUrl: null,
+      repoUrl: 'https://github.com/Aabid-Mohamed-Amine/Health-RAG',
       demoUrl: null,
     },
     {
@@ -158,6 +163,7 @@ export const FALLBACK_PORTFOLIO: Portfolio = {
     { id: 'cert-ml', title: 'Machine Learning', issuer: '365 Data Science', year: '2023', url: null },
     { id: 'cert-dl', title: 'Deep Learning', issuer: '365 Data Science', year: '2024', url: null },
     { id: 'cert-sql', title: 'SQL', issuer: '365 Data Science', year: '2023', url: null },
+    { id: 'cert-oracle', title: 'Oracle Cloud Infrastructure 2025 Certified Data Science Professional', issuer: 'Oracle', year: '2025', url: null },
   ],
   skillCategories: [
     {
