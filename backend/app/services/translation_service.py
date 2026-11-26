@@ -1,12 +1,12 @@
-from deep_translator import GoogleTranslator
+from deep_translator import MyMemoryTranslator
 
 
 def translate_fr_to_en(text: str) -> str | None:
-    """Translate French text to English. Returns None on failure."""
+    """Translate French text to English using MyMemory (free, no API key)."""
     if not text or not text.strip():
         return None
     try:
-        return GoogleTranslator(source="fr", target="en").translate(text)
+        return MyMemoryTranslator(source="fr-FR", target="en-GB").translate(text)
     except Exception:
         return None
 

@@ -25,22 +25,14 @@ def _needs_translation(raw: dict) -> bool:
 
 
 def get_portfolio() -> PortfolioResponse:
+    """Return portfolio data, using the translated override cache when available."""
     if OVERRIDE_PATH.exists():
         try:
             raw = json.loads(OVERRIDE_PATH.read_text(encoding="utf-8"))
-            if not _needs_translation(raw):
-                return PortfolioResponse.model_validate(raw)
+            return PortfolioResponse.model_validate(raw)
         except Exception:
             pass
-
-    # No valid cached translation — auto-translate and cache
-    from app.services.translation_service import auto_fill_en_fields
-
-    raw = PORTFOLIO_DATA.model_dump()
-    raw = auto_fill_en_fields(raw)
-    data = PortfolioResponse.model_validate(raw)
-    save_portfolio(data)
-    return data
+    return PORTFOLIO_DATA
 
 
 def save_portfolio(data: PortfolioResponse) -> None:
