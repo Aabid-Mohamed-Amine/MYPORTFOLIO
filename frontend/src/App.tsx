@@ -9,6 +9,7 @@ import { About } from './components/sections/about'
 import { Contact } from './components/sections/contact'
 import { usePortfolioData } from './hooks/use-portfolio-data'
 import { LanguageProvider, useLang } from './i18n/language-context'
+import AdminPage from './pages/AdminPage'
 
 function PortfolioApp() {
   const { data, loading, error } = usePortfolioData()
@@ -50,6 +51,9 @@ function PortfolioApp() {
 }
 
 export default function App() {
+  if (window.location.pathname === '/admin') {
+    return <AdminPage />
+  }
   return (
     <LanguageProvider>
       <PortfolioApp />

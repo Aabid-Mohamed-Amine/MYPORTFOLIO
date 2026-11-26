@@ -8,6 +8,10 @@ class Settings(BaseSettings):
     allowed_origins: list[str] = ["http://localhost:5173"]
     log_level: str = "INFO"
     contact_email: str = ""
+    admin_password: str = "admin123"
+    secret_key: str = "change-me-in-production-use-a-long-random-string"
+    jwt_algorithm: str = "HS256"
+    jwt_expire_hours: int = 24
 
     model_config = SettingsConfigDict(
         env_file=".env",

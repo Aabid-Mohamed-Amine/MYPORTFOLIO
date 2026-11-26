@@ -25,7 +25,7 @@ describe('Hero', () => {
   it('renders CV download link', () => {
     render(<Hero data={FALLBACK_PORTFOLIO} />)
     const link = screen.getByRole('link', { name: /Télécharger CV/i })
-    expect(link).toHaveAttribute('href', '/CV_Mohamed_Amine_AABID_FR.pdf')
+    expect(link).toHaveAttribute('href', '/api/v1/cv/fr')
   })
 
   it('renders projects CTA button', () => {

@@ -25,7 +25,7 @@ interface HeroProps {
 }
 
 export function Hero({ data: _data }: HeroProps) {
-  const { t } = useLang()
+  const { t, lang } = useLang()
   return (
     <section
       id="hero"
@@ -98,7 +98,7 @@ export function Hero({ data: _data }: HeroProps) {
             >
               {t.hero.ctaProjects} <ArrowRight size={16} className="ml-2" />
             </Button>
-            <a href="/CV_Mohamed_Amine_AABID_FR.pdf" download>
+            <a href={`/api/v1/cv/${lang}`} download={`CV_Mohamed_Amine_AABID_${lang.toUpperCase()}.pdf`}>
               <Button variant="ghost" size="lg">
                 <Download size={16} className="mr-2" />
                 {t.hero.ctaCv}

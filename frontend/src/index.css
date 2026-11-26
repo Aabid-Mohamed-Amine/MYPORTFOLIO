@@ -132,6 +132,89 @@
   }
 }
 
+  /* ── Admin UI ───────────────────────────────────────────────────── */
+  .admin-card {
+    background-color: hsl(var(--surface));
+    border: 1px solid hsl(var(--border));
+    border-radius: 12px;
+    padding: 1.25rem;
+  }
+
+  .admin-input {
+    width: 100%;
+    background-color: hsl(var(--surface-raised));
+    border: 1px solid hsl(var(--border));
+    border-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8125rem;
+    color: hsl(var(--foreground));
+    outline: none;
+    transition: border-color 0.15s;
+  }
+
+  .admin-input:focus {
+    border-color: hsl(var(--primary));
+  }
+
+  .admin-btn-primary {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background-color: hsl(var(--primary));
+    color: hsl(0 0% 4%);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 600;
+    transition: background-color 0.15s;
+    cursor: pointer;
+    border: none;
+  }
+
+  .admin-btn-primary:hover {
+    background-color: hsl(var(--primary-dark));
+  }
+
+  .admin-btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 1px solid hsl(var(--border));
+    color: hsl(var(--muted));
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    transition: border-color 0.15s, color 0.15s;
+    cursor: pointer;
+  }
+
+  .admin-btn-ghost:hover {
+    border-color: hsl(var(--foreground) / 0.4);
+    color: hsl(var(--foreground));
+  }
+
+  .admin-btn-danger {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    background-color: transparent;
+    border: 1px solid hsl(0 72% 50% / 0.3);
+    color: hsl(0 72% 60%);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    transition: border-color 0.15s, background-color 0.15s;
+    cursor: pointer;
+  }
+
+  .admin-btn-danger:hover {
+    border-color: hsl(0 72% 50%);
+    background-color: hsl(0 72% 50% / 0.1);
+  }
+}
+
 @keyframes cursor-blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
