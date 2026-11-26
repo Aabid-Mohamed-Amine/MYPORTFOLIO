@@ -98,7 +98,7 @@ export function Hero({ data: _data }: HeroProps) {
             >
               {t.hero.ctaProjects} <ArrowRight size={16} className="ml-2" />
             </Button>
-            <a href="/cv-mohamed-amine-aabid.pdf" download>
+            <a href="/CV_Mohamed_Amine_AABID_FR.pdf" download>
               <Button variant="ghost" size="lg">
                 <Download size={16} className="mr-2" />
                 {t.hero.ctaCv}
