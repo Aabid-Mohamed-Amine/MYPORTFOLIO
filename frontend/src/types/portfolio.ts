@@ -2,10 +2,13 @@ export interface Experience {
   id: string
   company: string
   role: string
+  roleEn: string | null
   type: string
+  typeEn: string | null
   period: string
   location: string
   description: string
+  descriptionEn: string | null
   metrics: string[]
   tags: string[]
   repoUrl: string | null
@@ -14,9 +17,12 @@ export interface Experience {
 export interface Project {
   id: string
   title: string
+  titleEn: string | null
   subtitle: string
+  subtitleEn: string | null
   domainTags: string[]
   description: string
+  descriptionEn: string | null
   architecture: string
   benchmarks: string[]
   techStack: string[]
@@ -27,6 +33,7 @@ export interface Project {
 export interface Education {
   id: string
   degree: string
+  degreeEn: string | null
   institution: string
   year: string
   location: string
@@ -47,6 +54,7 @@ export interface SkillCategory {
 
 export interface AboutMetric {
   label: string
+  labelEn: string | null
   value: string
 }
 

@@ -49,10 +49,12 @@ export function Navbar() {
             {/* Language toggle */}
             <button
               onClick={toggle}
-              className="font-mono text-xs font-medium border border-custom rounded-md px-2.5 py-1.5 text-muted hover:border-primary hover:text-primary transition-colors"
+              className="font-mono text-xs font-medium border border-custom rounded-md px-2.5 py-1.5 hover:border-primary transition-colors flex items-center gap-1"
               aria-label="Switch language"
             >
-              {lang === 'fr' ? 'EN' : 'FR'}
+              <span className={lang === 'fr' ? 'text-primary font-bold' : 'text-muted'}>FR</span>
+              <span className="text-muted/40">|</span>
+              <span className={lang === 'en' ? 'text-primary font-bold' : 'text-muted'}>EN</span>
             </button>
             <Button
               variant="primary"
@@ -69,10 +71,12 @@ export function Navbar() {
           <div className="md:hidden flex items-center gap-2">
             <button
               onClick={toggle}
-              className="font-mono text-xs font-medium border border-custom rounded-md px-2 py-1 text-muted hover:border-primary hover:text-primary transition-colors"
+              className="font-mono text-xs font-medium border border-custom rounded-md px-2 py-1 hover:border-primary transition-colors flex items-center gap-1"
               aria-label="Switch language"
             >
-              {lang === 'fr' ? 'EN' : 'FR'}
+              <span className={lang === 'fr' ? 'text-primary font-bold' : 'text-muted'}>FR</span>
+              <span className="text-muted/40">|</span>
+              <span className={lang === 'en' ? 'text-primary font-bold' : 'text-muted'}>EN</span>
             </button>
             <button
               className="text-foreground p-2"

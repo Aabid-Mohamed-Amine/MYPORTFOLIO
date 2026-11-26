@@ -5,10 +5,13 @@ class Experience(BaseModel):
     id: str
     company: str
     role: str
+    role_en: str | None = None
     type: str
+    type_en: str | None = None
     period: str
     location: str
     description: str
+    description_en: str | None = None
     metrics: list[str]
     tags: list[str]
     repo_url: str | None = None
@@ -17,9 +20,12 @@ class Experience(BaseModel):
 class Project(BaseModel):
     id: str
     title: str
+    title_en: str | None = None
     subtitle: str
+    subtitle_en: str | None = None
     domain_tags: list[str]
     description: str
+    description_en: str | None = None
     architecture: str
     benchmarks: list[str]
     tech_stack: list[str]
@@ -30,6 +36,7 @@ class Project(BaseModel):
 class Education(BaseModel):
     id: str
     degree: str
+    degree_en: str | None = None
     institution: str
     year: str
     location: str
@@ -50,6 +57,7 @@ class SkillCategory(BaseModel):
 
 class AboutMetric(BaseModel):
     label: str
+    label_en: str | None = None
     value: str
 
 

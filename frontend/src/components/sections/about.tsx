@@ -7,11 +7,10 @@ interface AboutProps {
 }
 
 export function About({ data }: AboutProps) {
-  const { t } = useLang()
+  const { t, lang } = useLang()
   return (
     <section id="about" className="section-padding">
       <div className="mx-auto max-w-6xl">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -25,7 +24,6 @@ export function About({ data }: AboutProps) {
           <h2 className="section-title mt-2 text-foreground">{t.about.title}</h2>
         </motion.div>
 
-        {/* Two-column layout */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
           {/* Photo + métriques */}
           <motion.div
@@ -35,7 +33,6 @@ export function About({ data }: AboutProps) {
             viewport={{ once: true }}
             className="flex flex-col gap-6"
           >
-            {/* Profile photo */}
             <div className="relative w-fit">
               <div className="h-80 w-80 rounded-2xl overflow-hidden border border-primary/30 shadow-[0_0_40px_hsl(142_72%_50%/0.1)]">
                 <img
@@ -49,29 +46,23 @@ export function About({ data }: AboutProps) {
               </div>
             </div>
 
-            {/* Métriques */}
             <div className="grid grid-cols-1 gap-3 mt-2">
               {data.aboutMetrics.map((metric, i) => {
-                const labels = [
-                  t.about.metricsLabels.pipelines,
-                  t.about.metricsLabels.repos,
-                  t.about.metricsLabels.models,
-                ]
+                const label = lang === 'en' ? (metric.labelEn ?? metric.label) : metric.label
                 return (
-                <motion.div
-                  key={metric.label}
-                  initial={{ opacity: 0, y: 10 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.4, delay: i * 0.1 }}
-                  viewport={{ once: true }}
-                  className="glow-card rounded-xl p-4 bg-surface flex items-center gap-4"
-                >
-                  <div className="font-mono text-2xl font-bold text-primary">{metric.value}</div>
-                  <div>
-                    <div className="font-sans text-sm font-semibold text-foreground">{labels[i] ?? metric.label}</div>
-                  </div>
-                </motion.div>
-              )})}
+                  <motion.div
+                    key={metric.label}
+                    initial={{ opacity: 0, y: 10 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: i * 0.1 }}
+                    viewport={{ once: true }}
+                    className="glow-card rounded-xl p-4 bg-surface flex items-center gap-4"
+                  >
+                    <div className="font-mono text-2xl font-bold text-primary">{metric.value}</div>
+                    <div className="font-sans text-sm font-semibold text-foreground">{label}</div>
+                  </motion.div>
+                )
+              })}
             </div>
           </motion.div>
 
@@ -91,7 +82,6 @@ export function About({ data }: AboutProps) {
               {t.about.p3c}
             </p>
           </motion.div>
-
         </div>
       </div>
     </section>

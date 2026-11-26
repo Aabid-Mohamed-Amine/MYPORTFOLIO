@@ -9,6 +9,7 @@ from app.core.config import get_settings
 from app.core.security import create_access_token, verify_token
 from app.models.portfolio import PortfolioResponse
 from app.services.portfolio_service import get_portfolio, save_portfolio
+from app.services.translation_service import auto_fill_en_fields
 
 router = APIRouter(prefix="/admin", tags=["admin"])
 
@@ -47,6 +48,10 @@ def read_portfolio() -> PortfolioResponse:
 
 @router.put("/portfolio", response_model=PortfolioResponse, dependencies=[Depends(require_admin)])
 def update_portfolio(data: PortfolioResponse) -> PortfolioResponse:
+    # Auto-translate any items missing English fields
+    raw = data.model_dump()
+    raw = auto_fill_en_fields(raw)
+    data = PortfolioResponse.model_validate(raw)
     save_portfolio(data)
     return data
 
