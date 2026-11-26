@@ -2,7 +2,10 @@ import { motion } from 'motion/react'
 import { ExternalLink, Github, Terminal } from 'lucide-react'
 import { Badge } from '../ui/badge'
 import { useLang } from '../../i18n/language-context'
+import { translations } from '../../i18n/translations'
 import type { Portfolio } from '../../lib/schemas'
+
+type ProjectItemKey = keyof typeof translations.fr.projects.items
 
 interface ProjectsProps {
   data: Portfolio
@@ -29,7 +32,12 @@ export function Projects({ data }: ProjectsProps) {
 
         {/* Project cards */}
         <div className="flex flex-col gap-8">
-          {data.projects.map((project, i) => (
+          {data.projects.map((project, i) => {
+            const projT = t.projects.items[project.id as ProjectItemKey]
+            const title = projT?.title ?? project.title
+            const subtitle = projT?.subtitle ?? project.subtitle
+            const description = projT?.description ?? project.description
+            return (
             <motion.article
               key={project.id}
               initial={{ opacity: 0, y: 20 }}
@@ -53,14 +61,14 @@ export function Projects({ data }: ProjectsProps) {
                   {/* Title */}
                   <div>
                     <h3 className="font-sans text-xl font-bold text-foreground">
-                      {project.title}
+                      {title}
                     </h3>
-                    <p className="font-mono text-sm text-muted mt-1">{project.subtitle}</p>
+                    <p className="font-mono text-sm text-muted mt-1">{subtitle}</p>
                   </div>
 
                   {/* Description */}
                   <p className="font-sans text-sm text-muted leading-relaxed">
-                    {project.description}
+                    {description}
                   </p>
 
                   {/* Benchmarks */}
@@ -131,7 +139,7 @@ export function Projects({ data }: ProjectsProps) {
                 </div>
               </div>
             </motion.article>
-          ))}
+          )})}
         </div>
       </div>
     </section>

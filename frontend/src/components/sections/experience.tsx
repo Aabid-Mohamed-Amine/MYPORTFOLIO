@@ -2,7 +2,10 @@ import { motion } from 'motion/react'
 import { MapPin, Calendar, Github } from 'lucide-react'
 import { Badge } from '../ui/badge'
 import { useLang } from '../../i18n/language-context'
+import { translations } from '../../i18n/translations'
 import type { Portfolio } from '../../lib/schemas'
+
+type ExpItemKey = keyof typeof translations.fr.experience.items
 
 interface ExperienceProps {
   data: Portfolio
@@ -33,7 +36,12 @@ export function Experience({ data }: ExperienceProps) {
           <div className="absolute left-4 top-0 bottom-0 w-px bg-gradient-to-b from-primary/50 via-primary/20 to-transparent" />
 
           <div className="flex flex-col gap-12">
-            {data.experiences.map((exp, i) => (
+            {data.experiences.map((exp, i) => {
+              const expT = t.experience.items[exp.id as ExpItemKey]
+              const role = expT?.role ?? exp.role
+              const description = expT?.description ?? exp.description
+              const type = expT?.type ?? exp.type
+              return (
               <motion.div
                 key={exp.id}
                 initial={{ opacity: 0, x: -20 }}
@@ -53,11 +61,11 @@ export function Experience({ data }: ExperienceProps) {
                   <div className="flex flex-wrap items-start justify-between gap-2 mb-3">
                     <div>
                       <h3 className="font-sans text-base font-semibold text-foreground">
-                        {exp.role}
+                        {role}
                       </h3>
                       <p className="font-mono text-sm text-primary mt-0.5">{exp.company}</p>
                     </div>
-                    <Badge variant="gray">{exp.type}</Badge>
+                    <Badge variant="gray">{type}</Badge>
                   </div>
 
                   {/* Meta */}
@@ -74,7 +82,7 @@ export function Experience({ data }: ExperienceProps) {
 
                   {/* Description */}
                   <p className="font-sans text-sm text-muted leading-relaxed mb-4">
-                    {exp.description}
+                    {description}
                   </p>
 
                   {/* Metrics */}
@@ -112,7 +120,7 @@ export function Experience({ data }: ExperienceProps) {
                   </div>
                 </div>
               </motion.div>
-            ))}
+            )})}
           </div>
         </div>
       </div>

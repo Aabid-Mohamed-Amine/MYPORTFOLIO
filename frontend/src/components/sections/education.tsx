@@ -1,7 +1,10 @@
 import { motion } from 'motion/react'
 import { GraduationCap, Award } from 'lucide-react'
 import { useLang } from '../../i18n/language-context'
+import { translations } from '../../i18n/translations'
 import type { Portfolio } from '../../lib/schemas'
+
+type DegreeKey = keyof typeof translations.fr.education.degrees
 
 interface EducationProps {
   data: Portfolio
@@ -43,7 +46,7 @@ export function Education({ data }: EducationProps) {
               </div>
               <div>
                 <h3 className="font-sans text-sm font-semibold text-foreground leading-snug">
-                  {edu.degree}
+                  {t.education.degrees[edu.id as DegreeKey] ?? edu.degree}
                 </h3>
                 <p className="font-mono text-xs text-primary mt-1">{edu.institution}</p>
                 <p className="font-mono text-xs text-muted mt-0.5">{edu.location}</p>

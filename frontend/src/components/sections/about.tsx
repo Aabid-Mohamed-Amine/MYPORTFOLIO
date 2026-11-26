@@ -51,7 +51,13 @@ export function About({ data }: AboutProps) {
 
             {/* Métriques */}
             <div className="grid grid-cols-1 gap-3 mt-2">
-              {data.aboutMetrics.map((metric, i) => (
+              {data.aboutMetrics.map((metric, i) => {
+                const labels = [
+                  t.about.metricsLabels.pipelines,
+                  t.about.metricsLabels.repos,
+                  t.about.metricsLabels.models,
+                ]
+                return (
                 <motion.div
                   key={metric.label}
                   initial={{ opacity: 0, y: 10 }}
@@ -62,11 +68,10 @@ export function About({ data }: AboutProps) {
                 >
                   <div className="font-mono text-2xl font-bold text-primary">{metric.value}</div>
                   <div>
-                    <div className="font-sans text-sm font-semibold text-foreground">{metric.label}</div>
-                    <div className="font-mono text-xs text-muted">{metric.description}</div>
+                    <div className="font-sans text-sm font-semibold text-foreground">{labels[i] ?? metric.label}</div>
                   </div>
                 </motion.div>
-              ))}
+              )})}
             </div>
           </motion.div>
 
