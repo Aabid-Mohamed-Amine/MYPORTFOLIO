@@ -62,31 +62,34 @@ PORTFOLIO_DATA = PortfolioResponse(
         Experience(
             id="wehelp",
             company="WEHELP Group",
-            role="Data Analyst Intern",
-            type="Stage",
+            role="Développeur Full-Stack — Application SMS en masse",
+            type="Stage PFE",
             period="Juil 2023 – Sep 2023",
             location="Meknès, Maroc",
             description=(
-                "Analyse de données clients et construction de tableaux de bord décisionnels "
-                "sous Power BI. Automatisation de rapports hebdomadaires via Python et SQL."
+                "Développement d'une application d'envoi de SMS en masse destinée aux campagnes "
+                "marketing et communications d'urgence des entreprises. Interface intuitive avec "
+                "gestion de contacts, création de groupes et envoi multi-destinataires. "
+                "Backend PHP Laravel, frontend jQuery, déployé sous WampServer."
             ),
-            metrics=["Dashboards Power BI déployés", "Automatisation reporting SQL/Python"],
-            tags=["Power BI", "SQL", "Python", "Excel", "Data Analysis"],
+            metrics=["Application SMS en masse déployée", "Gestion multi-destinataires", "Interface jQuery + Laravel"],
+            tags=["PHP", "Laravel", "jQuery", "MySQL", "WampServer", "Full-Stack"],
         ),
         Experience(
             id="onee",
             company="ONEE",
-            role="Data Engineering Intern",
-            type="Stage",
+            role="Développeur Excel VBA — Dématérialisation documentaire",
+            type="Stage d'initiation",
             period="Fév 2023 – Avr 2023",
             location="Meknès, Maroc",
             description=(
-                "Conception et implémentation de pipelines ETL pour la collecte, "
-                "transformation et chargement de données opérationnelles. "
-                "Modélisation de bases de données relationnelles."
+                "Conception d'une application Excel VBA intitulée « Dématérialisation des documents "
+                "de gestion des contrats de sous-traitance ONEE ». L'application permet la saisie, "
+                "la validation et la consultation électronique des documents, remplaçant les "
+                "formulaires papier et réduisant les erreurs de traitement."
             ),
-            metrics=["Pipelines ETL opérationnels", "Modélisation BDD relationnelle"],
-            tags=["Python", "SQL", "ETL", "PostgreSQL", "Data Engineering"],
+            metrics=["Application Excel VBA déployée", "Dématérialisation contrats ONEE", "Réduction des erreurs de saisie"],
+            tags=["Excel", "VBA", "Microsoft Office", "Automatisation", "Gestion documentaire"],
         ),
     ],
     projects=[
