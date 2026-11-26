@@ -130,7 +130,6 @@
     border-color: hsl(var(--primary));
     background-color: hsl(var(--primary) / 0.15);
   }
-}
 
   /* ── Admin UI ───────────────────────────────────────────────────── */
   .admin-card {
