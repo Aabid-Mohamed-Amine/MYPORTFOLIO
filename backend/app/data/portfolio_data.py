@@ -13,7 +13,7 @@ PORTFOLIO_DATA = PortfolioResponse(
         Experience(
             id="bdo",
             company="BDO Maroc",
-            role="AI & Cybersecurity Data Scientist — PFE AuditScanIA",
+            role="Data Scientist IA & Cybersécurité — PFE AuditScanIA",
             role_en="AI & Cybersecurity Data Scientist — Final Year Project (AuditScanIA)",
             type="PFE",
             type_en="Final Year Project",
@@ -37,7 +37,7 @@ PORTFOLIO_DATA = PortfolioResponse(
         Experience(
             id="snrt",
             company="SNRT",
-            role="AI & NLP Engineer — Indexation Audiovisuelle Sémantique",
+            role="Ingénieur IA & NLP — Indexation Audiovisuelle Sémantique",
             role_en="AI & NLP Engineer — Semantic Audiovisual Indexing",
             type="Stage",
             type_en="Internship",
@@ -61,7 +61,7 @@ PORTFOLIO_DATA = PortfolioResponse(
         Experience(
             id="3dsf",
             company="3D SMART FACTORY",
-            role="Data Science & AI Developer — Matching CV & Chatbot RH",
+            role="Développeur Data Science & IA — Matching CV & Chatbot RH",
             role_en="Data Science & AI Developer — CV Matching & HR Chatbot",
             type="Stage",
             type_en="Internship",

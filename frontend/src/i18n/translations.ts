@@ -11,12 +11,12 @@ export const translations = {
       cta: 'Me contacter →',
     },
     hero: {
-      availability: 'OPEN TO OPPORTUNITIES · CDI / ALTERNANCE',
-      h1a: 'Turning raw data into',
-      h1b: 'intelligent',
-      h1c: 'systems.',
+      availability: 'DISPONIBLE · CDI / ALTERNANCE',
+      h1a: 'Transformer les données brutes en',
+      h1b: 'systèmes intelligents',
+      h1c: '.',
       subtitle:
-        'AI Engineer, Data Engineer & Data Scientist — conception de pipelines de données scalables, fine-tuning NLP/LLM & Computer Vision, et déploiements MLOps production.',
+        'Ingénieur IA, Data Engineer & Data Scientist — conception de pipelines de données scalables, fine-tuning NLP/LLM & Computer Vision, et déploiements MLOps production.',
       ctaProjects: 'Voir les projets →',
       ctaCv: 'Télécharger CV',
     },

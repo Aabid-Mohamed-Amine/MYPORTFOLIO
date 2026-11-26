@@ -5,7 +5,7 @@ export const FALLBACK_PORTFOLIO: Portfolio = {
     {
       id: 'bdo',
       company: 'BDO Maroc',
-      role: 'AI & Cybersecurity Data Scientist — PFE AuditScanIA',
+      role: 'Data Scientist IA & Cybersécurité — PFE AuditScanIA',
       roleEn: 'AI & Cybersecurity Data Scientist — Final Year Project (AuditScanIA)',
       type: 'PFE',
       typeEn: 'Final Year Project',
@@ -22,7 +22,7 @@ export const FALLBACK_PORTFOLIO: Portfolio = {
     {
       id: 'snrt',
       company: 'SNRT',
-      role: 'AI & NLP Engineer — Indexation Audiovisuelle Sémantique',
+      role: 'Ingénieur IA & NLP — Indexation Audiovisuelle Sémantique',
       roleEn: 'AI & NLP Engineer — Semantic Audiovisual Indexing',
       type: 'Stage',
       typeEn: 'Internship',
@@ -39,7 +39,7 @@ export const FALLBACK_PORTFOLIO: Portfolio = {
     {
       id: '3dsf',
       company: '3D SMART FACTORY',
-      role: 'Data Science & AI Developer — Matching CV & Chatbot RH',
+      role: 'Développeur Data Science & IA — Matching CV & Chatbot RH',
       roleEn: 'Data Science & AI Developer — CV Matching & HR Chatbot',
       type: 'Stage',
       typeEn: 'Internship',
